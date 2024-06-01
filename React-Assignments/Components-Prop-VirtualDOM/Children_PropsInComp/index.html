@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your ItemList component code will go here
+  function Gallery({children}){
+
+    
+    return(
+        <div className = 'image-box' style ={{display:'grid',gridTemplateColumns:"repeat(3,1fr)",gap:'10px'}}>
+            {children}
+        </div>
+    )
+  }
+
+  function App(){
+    return(
+        <div>
+            <h1 style={{textAlign:'center'}}>Image Gallery</h1>
+            <Gallery>
+                <img style={{width:'500px',height:'500px',borderRadius:'50%'}}src="https://images.pexels.com/photos/135940/pexels-photo-135940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image1"/>
+                <img style={{width:'500px',height:'500px',borderRadius:'50%'}}src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image2"/>
+                <img  style={{width:'500px',height:'500px',borderRadius:'50%'}}src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image3"/>
+                <img style={{width:'500px',height:'500px',borderRadius:'50%'}} src="https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image4"/>
+                <img style={{width:'500px',height:'500px',borderRadius:'50%'}}src="https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image5"/>
+                <img style={{width:'500px',height:'500px',borderRadius:'50%'}}src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image5"/>
+                
+            </Gallery>
+            </div>
+    );
+  }
+
+
+  const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+  root.render(<App/>)
+
+  </script>
+</body>
+</html>
