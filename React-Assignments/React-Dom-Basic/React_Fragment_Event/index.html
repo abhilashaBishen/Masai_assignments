@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+     function handleClick(){
+        alert("Hello ");
+     }          
+
+     const jsxCode = (<>
+     <p style={{fontSize:'30px',fontWeight:'bold',textAlign:'center',margin:'5%',color:' #0049B7'}}>React is a javascript library</p>
+     <div className="main" style={{fontSize:'30px', textAlign:'center',margin:'5%',border:'solid',borderColor:'gray',borderWidth:'1px',backgroundColor:'#f75990',color:'white',padding:'1rem'}}><p>"Click the below button to alert 'Hello"</p>
+     <button onClick ={handleClick} style={{backgroundColor:'#0049B7',padding:'1rem',color:'white',fontSize:'20px',borderRadius:'20px',border:'none',fontWeight:'bold',cursor:"pointer"}}>Alert Hello</button>
+    </div>
+     </>); 
+
+     const root = ReactDOM.createRoot(document.querySelector("#root"))
+
+      root.render(jsxCode)
+    </script>
+  </body>
+</html>
